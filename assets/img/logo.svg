@@ -1,0 +1,14 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QBridges Logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="20" fill="url(#g)"/>
+  <path d="M18 72c16-12 32-18 46-18s30 6 46 18v18H18z" fill="#fff" opacity=".9"/>
+  <circle cx="36" cy="78" r="6" fill="#0ea5e9"/>
+  <circle cx="64" cy="78" r="6" fill="#0ea5e9"/>
+  <circle cx="92" cy="78" r="6" fill="#0ea5e9"/>
+  <path d="M18 64c16-12 32-18 46-18s30 6 46 18" fill="none" stroke="#fff" stroke-width="6" opacity=".9"/>
+</svg>

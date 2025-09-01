@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QBridges Learning Academy</title>
+  <meta name="description" content="QBridges Learning Academy — CPR/BLS & education services">
+  <link rel="preload" as="image" href="/assets/img/logo.svg">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="/en/index.html">
+      <img src="/assets/img/logo.svg" alt="QBridges logo" width="28" height="28"/>
+      <span>QBridges Learning Academy</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/en/courses.html">Courses</a></li>
+        <li><a href="/en/register.html">Register</a></li>
+        <li><a href="/en/payment.html">Payment</a></li>
+        <li><a href="/en/about.html">About</a></li>
+        <li><a href="/en/contact.html">Contact</a></li>
+        <li class="lang"><a href="/zh/index.html">中文</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+
+<section class="section">
+  <h2>Payment</h2>
+  <p>Choose your payment method below to confirm your seat.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>PayPal</h3>
+      <p>Replace <code>YOUR_CLIENT_ID</code> and price to match your course.</p>
+      <div id="paypal-button-container"></div>
+      <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+      <script>
+        if (window.paypal) {{
+          paypal.Buttons({{
+            createOrder: function(data, actions) {{
+              return actions.order.create({{
+                purchase_units: [{{ amount: {{ value: '80.00' }}, description: 'BLS Provider Course' }}]
+              }});
+            }},
+            onApprove: function(data, actions) {{
+              return actions.order.capture().then(function(details) {{
+                alert('Payment completed by ' + details.payer.name.given_name + '. Thank you!');
+              }});
+            }}
+          }}).render('#paypal-button-container');
+        }}
+      </script>
+    </div>
+
+    <div class="card">
+      <h3>Stripe</h3>
+      <p>Create a Stripe Checkout link in your Stripe dashboard and paste it below.</p>
+      <p><a class="btn btn-primary" href="YOUR_STRIPE_CHECKOUT_LINK">Pay with Stripe</a></p>
+    </div>
+  </div>
+
+  <p class="small">Need help? Email us at <a href="mailto:info@qbridgesacademy.com">info@qbridgesacademy.com</a>.</p>
+</section>
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="small">© 2025 QBridges Learning Academy • All rights reserved.</div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
